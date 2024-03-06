@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button type="button"
+            onclick="location.href='/'"
+            th:onclick="|location.href='@{/member/add}'|"
+            class="btn btn-primary">회원가입</button>
+    <button type="button"
+            th:onclick="|location.href='@{/loginForm}'|"
+            class="btn btn-primary">로그인</button>
+    <button type="button"
+            th:onclick="|location.href='@{/userPage}'|"
+            class="btn btn-primary">회원 페이지</button>
+    <form th:action="@{/logout}" th:method="post" method="post">
+        <button type="submit" class="btn btn-primary">로그아웃</button>
+    </form>
+<!--    <button sec:authorize="isAnonymous()" type="button" onclick="location.href='/admin/loginView'">비인증 버튼</button>-->
+
+</body>
+</html>
